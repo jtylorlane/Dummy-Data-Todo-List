@@ -80,6 +80,45 @@ const filterById = () => {
 }
 }
 
+function filterByCompleted() {
+    const num = document.getElementById("number_input").value;
+  
+    const filteredArray = arrayOfTodos.filter(
+      (array) => array.userId == num && array.completed == true
+    );
+  
+    for (let i = 0; i < filteredArray.length; i++) {
+      let toDos = document.getElementById("todo-list");
+  
+      let toDoList = document.createElement("li");
+  
+      let toDoTextNode = document.createTextNode(filteredArray[i].title);
+  
+      toDoList.appendChild(toDoTextNode);
+  
+      toDos.appendChild(toDoList);
+    }
+  }
+
+  function filterByNotCompleted() {
+    const num = document.getElementById("number_input").value;
+  
+    const filteredArray = arrayOfTodos.filter(
+      (array) => array.userId == num && array.completed == false
+    );
+  
+    for (let i = 0; i < filteredArray.length; i++) {
+      let toDos = document.getElementById("todo-list");
+  
+      let toDoList = document.createElement("li");
+  
+      let toDoTextNode = document.createTextNode(filteredArray[i].title);
+  
+      toDoList.appendChild(toDoTextNode);
+  
+      toDos.appendChild(toDoList);
+    }
+  }
     
 //     create a branch called: " Todo-Filtering ".
 // Fetch the same data.
